@@ -1,3 +1,4 @@
+import { ImageGalleryDynamic } from "@/components/gallery/ImageGalleryDynamic";
 import { IconGithub, IconImage, IconVideo } from "@/components/icons/Icons";
 import { ShootyNameDynamic } from "@/components/shooty-name/ShootyNameDynamic";
 import Link from "next/link";
@@ -14,58 +15,70 @@ export default function Home() {
         {list.map((item, i) => {
           const colorKey = colorList[i] as keyof DefaultColors;
           return (
-            <div key={i} className="border-b border-slate-200 py-6 flex">
-              <div className="flex-grow">
+            <div key={i} className="border-b border-slate-200 py-6">
+              <div className="flex">
                 <h2
-                  className="text-2xl mb-2 lowercase"
+                  className="text-2xl mb-2 lowercase flex-grow"
                   style={{ color: colors[colorKey]["600"] }}
                 >
-                  {item.name}
+                  {item.web ? (
+                    <Link href={item.web} className="hover:underline">
+                      {item.name}
+                    </Link>
+                  ) : (
+                    item.name
+                  )}
                 </h2>
-                <div className="text-rg text-slate-600 mb-2">
-                  {item.description}
-                </div>
-                <div className="flex">
-                  {item.tags?.map((tag, i) => (
-                    <div
-                      key={i}
-                      className="py-1 px-2 mt-2 mr-2 text-xs text-slate-600 border rounded-xl"
-                      style={{ borderColor: colors[colorKey]["400"] }}
+                <div className="flex items-start flex-nowrap ml-2">
+                  {item.demoVideo && (
+                    <Link
+                      title="View demo video"
+                      className="ml-2"
+                      href={item.demoVideo}
+                      target="_blank"
                     >
-                      {tag}
+                      <IconVideo
+                        style={{ width: 24, height: 24 }}
+                        color={colors[colorKey]["600"]}
+                      />
+                    </Link>
+                  )}
+                  {!!item.screenshots?.length && (
+                    <div className="ml-2">
+                      <ImageGalleryDynamic
+                        images={item.screenshots}
+                        color={colors[colorKey]["600"]}
+                      />
                     </div>
-                  ))}
+                  )}
+                  {item.github && (
+                    <Link
+                      href={item.github}
+                      title="View project on GitHub"
+                      className="ml-2"
+                      target="_blank"
+                    >
+                      <IconGithub
+                        style={{ width: 24, height: 24 }}
+                        color={colors[colorKey]["600"]}
+                      />
+                    </Link>
+                  )}
                 </div>
               </div>
-              <div className="flex items-start flex-nowrap ml-2">
-                {item.demoVideo && (
-                  <button title="View demo video" className="ml-2">
-                    <IconVideo
-                      style={{ width: 24, height: 24 }}
-                      color={colors[colorKey]["600"]}
-                    />
-                  </button>
-                )}
-                {!!item.screenshots?.length && (
-                  <button title="View screenshots" className="ml-2">
-                    <IconImage
-                      style={{ width: 24, height: 24 }}
-                      color={colors[colorKey]["600"]}
-                    />
-                  </button>
-                )}
-                {item.github && (
-                  <Link
-                    href={item.github}
-                    title="View project on GitHub"
-                    className="ml-2"
+              <div className="text-rg text-slate-600 mb-2">
+                {item.description}
+              </div>
+              <div className="flex flex-wrap">
+                {item.tags?.map((tag, i) => (
+                  <div
+                    key={i}
+                    className="py-1 px-2 mt-2 mr-2 text-xs text-slate-600 border rounded-xl whitespace-nowrap"
+                    style={{ borderColor: colors[colorKey]["400"] }}
                   >
-                    <IconGithub
-                      style={{ width: 24, height: 24 }}
-                      color={colors[colorKey]["600"]}
-                    />
-                  </Link>
-                )}
+                    {tag}
+                  </div>
+                ))}
               </div>
             </div>
           );

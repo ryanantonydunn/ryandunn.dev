@@ -22,7 +22,11 @@ export default function Home() {
                   style={{ color: colors[colorKey]["600"] }}
                 >
                   {item.web ? (
-                    <Link href={item.web} className="hover:underline">
+                    <Link
+                      href={item.web}
+                      className="hover:underline"
+                      target="_blank"
+                    >
                       {item.name}
                     </Link>
                   ) : (

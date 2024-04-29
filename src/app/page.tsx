@@ -1,113 +1,206 @@
-import Image from "next/image";
+import { IconGithub, IconImage, IconVideo } from "@/components/icons/Icons";
+import { ShootyNameDynamic } from "@/components/shooty-name/ShootyNameDynamic";
+import Link from "next/link";
+import colors from "tailwindcss/colors";
+import { DefaultColors } from "tailwindcss/types/generated/colors";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main className="flex flex-col items-center max-w-screen-sm mx-auto p-2 pb-6 pt-0">
+      <div className="relative">
+        <div className="text-4xl text-cyan-600 p-3">rd</div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="bg-white w-full border border-slate-200 rounded-2xl px-6">
+        {list.map((item, i) => {
+          const colorKey = colorList[i] as keyof DefaultColors;
+          return (
+            <div key={i} className="border-b border-slate-200 py-6 flex">
+              <div className="flex-grow">
+                <h2
+                  className="text-2xl mb-2 lowercase"
+                  style={{ color: colors[colorKey]["600"] }}
+                >
+                  {item.name}
+                </h2>
+                <div className="text-rg text-slate-600 mb-2">
+                  {item.description}
+                </div>
+                <div className="flex">
+                  {item.tags?.map((tag, i) => (
+                    <div
+                      key={i}
+                      className="py-1 px-2 mt-2 mr-2 text-xs text-slate-600 border rounded-xl"
+                      style={{ borderColor: colors[colorKey]["400"] }}
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-start flex-nowrap ml-2">
+                {item.demoVideo && (
+                  <button title="View demo video" className="ml-2">
+                    <IconVideo
+                      style={{ width: 24, height: 24 }}
+                      color={colors[colorKey]["600"]}
+                    />
+                  </button>
+                )}
+                {!!item.screenshots?.length && (
+                  <button title="View screenshots" className="ml-2">
+                    <IconImage
+                      style={{ width: 24, height: 24 }}
+                      color={colors[colorKey]["600"]}
+                    />
+                  </button>
+                )}
+                {item.github && (
+                  <Link
+                    href={item.github}
+                    title="View project on GitHub"
+                    className="ml-2"
+                  >
+                    <IconGithub
+                      style={{ width: 24, height: 24 }}
+                      color={colors[colorKey]["600"]}
+                    />
+                  </Link>
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </main>
   );
 }
+
+interface Project {
+  name: string;
+  description: string;
+  tags?: string[];
+  github?: string;
+  web?: string;
+  screenshots?: string[];
+  demoVideo?: string;
+}
+
+const list: Project[] = [
+  {
+    name: "Project Ants",
+    description:
+      "Action game with custom physics and collision engine, objects, weapons, random destroyable gravity-based terrain.",
+    tags: ["Game Development"],
+    github: "https://github.com/ryanantonydunn/project-ants",
+    demoVideo: "https://www.youtube.com/watch?v=7dCMg6u2Qug",
+    web: "https://ryanantonydunn.github.io/project-ants/",
+    screenshots: ["projectants-1.png"],
+  },
+  {
+    name: "Track Whatever",
+    description: "Self-track any custom data metric in a straightforward way.",
+    tags: ["React", "TypeScript", "Material UI", "PouchDB"],
+    github: "https://github.com/ryanantonydunn/track-whatever",
+    web: "https://trackwhatever.ryandunn.dev/",
+    screenshots: [
+      "trackwhatever-1.webp",
+      "trackwhatever-2.webp",
+      "trackwhatever-3.webp",
+      "trackwhatever-4.webp",
+      "trackwhatever-5.webp",
+      "trackwhatever-6.webp",
+    ],
+  },
+  {
+    name: "Know My Values",
+    description:
+      "Clarify your core values with a simple rank sorting exercise.",
+    tags: ["Svelte", "Rollup"],
+    github: "https://github.com/ryanantonydunn/know-my-values",
+    web: "https://knowmyvalues.ryandunn.dev/",
+    screenshots: [
+      "knowmyvalues-1.png",
+      "knowmyvalues-2.png",
+      "knowmyvalues-3.png",
+    ],
+  },
+  {
+    name: "Climb Finder",
+    description: "Complex search for any climbing route in the UK.",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind", "MySQL"],
+    github: "https://github.com/ryanantonydunn/climb-finder",
+    screenshots: ["climbfinder-1.png"],
+  },
+  {
+    name: "Get To Ten",
+    description:
+      "Game where you try to get to ten by merging numbered tiles together.",
+    tags: ["Game Development", "Cordova"],
+    github: "https://github.com/ryanantonydunn/get-to-ten",
+    web: "https://ryanantonydunn.github.io/get-to-ten/",
+    screenshots: ["gettoten-1.png"],
+  },
+  {
+    name: "Spotify Playlist Backup",
+    description: "Create CSV files with contents of Spotify playlists.",
+    tags: ["node.js"],
+    github: "https://github.com/ryanantonydunn/spotify-playlist-backup",
+  },
+  {
+    name: "Peak Ticker",
+    description: "Map viewer and ticklist for major peaks and walks in the UK.",
+    tags: ["React", "Next.js", "TypeScript"],
+    github: "https://github.com/ryanantonydunn/peak-ticker",
+    web: "https://peakticker.ryandunn.dev/",
+    screenshots: ["peakticker-1.png"],
+  },
+  {
+    name: "Grid Draw",
+    description: "Simple web app for drawing with lines on a grid.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind"],
+    github: "https://github.com/ryanantonydunn/grid-draw",
+    web: "https://griddraw.ryandunn.dev/",
+    screenshots: ["griddraw-1.png"],
+  },
+  {
+    name: "Snooker Stats",
+    description: "Experiments with the snooker.org API data set.",
+    tags: ["node.js", "TypeScript", "Vite"],
+    github: "https://github.com/ryanantonydunn/snooker-stats",
+    screenshots: [
+      "snooker-1.webp",
+      "snooker-2.webp",
+      "snooker-3.webp",
+      "snooker-4.webp",
+    ],
+  },
+  {
+    name: "Zelda Canvas",
+    description:
+      "Top down 2d game engine with integrated map editor. Made with graphics from Zelda 3.",
+    github: "https://github.com/ryanantonydunn/zelda-canvas",
+    web: "https://ryanantonydunn.github.io/zelda-canvas/",
+    tags: ["Game Development"],
+    screenshots: ["zeldacanvas-1.png"],
+  },
+];
+
+const colorList = [
+  "teal",
+  "emerald",
+  "green",
+  "lime",
+  "yellow",
+  "amber",
+  "orange",
+  "red",
+  "rose",
+  "pink",
+  "fuschia",
+  "purple",
+  "violet",
+  "indigo",
+  "blue",
+  "sky",
+  "cyan",
+];
